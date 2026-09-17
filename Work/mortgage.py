@@ -23,6 +23,7 @@ while principal > 0:
         total_paid = total_paid + extra_payment
 
 print(months, round(total_paid, 2), round(principal, 2))
+print (f'{months} months take to pay {total_paid:0.2f} with principal {principal} ')
 
 
 print('Total paid', round(total_paid, 2))
