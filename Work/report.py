@@ -8,10 +8,12 @@ from pprint import pprint
 def read_portfolio(filename):
     portfolio = []
     # total = 0.0
-    with open("practical-python/Work/Data/portfolio.csv", "rt") as file:
+    with open("Data/portfolio.csv", "rt") as file:
         rows = csv.reader(file)
         header = next(file)
         for row in rows:
+            # record = dict(zip(header, row))
+            # print (record)
             name = str(row[0])
             shares = int(row[1])
             price = float(row[2])
@@ -22,12 +24,12 @@ def read_portfolio(filename):
         
     # print(total)
     return portfolio
-my_portfolio = read_portfolio("practical-python/Work/Data/portfolio.csv")
+my_portfolio = read_portfolio("Data/portfolio.csv")
 # pprint(my_portfolio)        
 
 def read_prices(filename):
     stock_names = {}
-    with open ('practical-python/Work/Data/prices.csv', 'r' ) as f:
+    with open ('Data/prices.csv', 'r' ) as f:
         rows = csv.reader(f)
 
         for row in rows:
@@ -42,7 +44,7 @@ def read_prices(filename):
             # print (row)
            
     return stock_names
-market_data = read_prices("practical-python/Work/Data/prices.csv")
+market_data = read_prices("Data/prices.csv")
 # pprint(market_data)
 
 def make_report(my_portfolio, market_data):
