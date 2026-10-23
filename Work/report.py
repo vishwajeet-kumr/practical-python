@@ -4,7 +4,6 @@
 import csv
 from pprint import pprint
 
-
 def read_portfolio(filename):
     portfolio = []
     # total = 0.0
@@ -45,7 +44,6 @@ def read_prices(filename):
            
     return stock_names
 market_data = read_prices("Work/Data/prices.csv")
-# pprint(market_data)
 
 def make_report(my_portfolio, market_data):
     report_list = []
@@ -54,17 +52,12 @@ def make_report(my_portfolio, market_data):
         Name = holdings['name']
         Shares = holdings['shares']
         original_price = holdings['price']
-
         current_price = market_data[Name]
-
         price_change = current_price - original_price
-
         tuple_rows = (Name, Shares, current_price, price_change)
-
         report_list.append(tuple_rows)
-
-
     return report_list
+
 report = make_report(my_portfolio, market_data)
 
 headers = ('Name', 'Shares', 'Price', 'Change')
