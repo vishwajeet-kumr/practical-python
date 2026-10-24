@@ -1,5 +1,6 @@
 # fileparse.py
 import csv
+from pprint import pprint
 
 def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=',', silence_errors=False):
     '''
@@ -46,3 +47,5 @@ def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','
             records.append(record)
 
         return records
+
+
