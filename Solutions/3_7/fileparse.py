@@ -1,5 +1,6 @@
 # fileparse.py
 import csv
+from pprint import pprint
 
 def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','):
     '''
@@ -37,3 +38,8 @@ def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','
             records.append(record)
 
         return records
+share_held = parse_csv(
+    "Work/Data/portfolio.dat",types=[str, int, float], delimiter=' '
+)
+
+pprint(share_held)
