@@ -55,3 +55,11 @@ def create_formatter(fmt):
         return HTMLTableFormatter()
     else:
         raise RuntimeError(f"Unknown Format: {fmt}")
+
+
+def print_table(object, columns, formatter):
+        '''print the table as the User ask with get attributes function'''
+        formatter.headings(columns)
+        for obj in object:
+            rowdata = [str(getattr(obj, col)) for col in columns]
+            formatter.row(rowdata)

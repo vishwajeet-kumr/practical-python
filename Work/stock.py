@@ -13,7 +13,10 @@ class Stock:
         """Number of shares to sell"""
         self.shares -= num_shares
 
+    def __repr__(self):
+        return f"Stock({self.name!r}, {self.shares}, {self.price})"
 
+    
 if __name__ == "__main__":
 
     a = Stock("GOOG", 100, 95.50)
